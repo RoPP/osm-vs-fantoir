@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import cgi
 import cgitb
 import json
 import sys
@@ -10,8 +9,8 @@ from pg_connexion import get_pgc
 
 
 cgitb.enable()
-print "Content-Type: application/json"
-print ""
+print("Content-Type: application/json")
+print("")
 
 pgc = get_pgc()
 

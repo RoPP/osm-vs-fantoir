@@ -10,8 +10,8 @@ from pg_connexion import get_pgc
 
 
 cgitb.enable()
-print "Content-Type: application/json"
-print ""
+print("Content-Type: application/json")
+print("")
 
 pgc = get_pgc()
 params = cgi.FieldStorage()
@@ -20,11 +20,11 @@ statut = params['statut'].value
 fantoir = params['fantoir'].value
 
 try:
-	str_insert = "INSERT INTO statut_fantoir VALUES ('{:s}',{:s},(select extract(epoch from now()))::integer,'{:s}');COMMIT;".format(fantoir,statut,insee_com);
-	cur = pgc.cursor()
-	cur.execute(str_insert)
-except:
-	statut = -1
+    str_insert = "INSERT INTO statut_fantoir VALUES ('{:s}',{:s},(select extract(epoch from now()))::integer,'{:s}');COMMIT;".format(fantoir,statut,insee_com);
+    cur = pgc.cursor()
+    cur.execute(str_insert)
+except Exception:
+    statut = -1
 
 a = json.JSONEncoder().encode(statut)
 print(a)
