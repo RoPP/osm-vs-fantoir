@@ -1,0 +1,14 @@
+db:
+    image: mdillon/postgis
+    environment:
+        - POSTGRES_USER=bano
+        - POSTGRES_PASSWORD=unSuperMot2passe
+
+dev:
+    build: .
+    volumes:
+        - .:/srv/www
+    links:
+        - db
+    ports:
+        - 80
