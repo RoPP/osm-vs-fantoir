@@ -10,7 +10,6 @@ function start(){
         update_url_tab($(this).parent().children().index($(this)))
     })
     $.ajax({
-        // FIXME
         url: "/api/fantoir/status"
     })
     .done(function( data ) {

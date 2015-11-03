@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% set page_title = "Voies récentes manquantes" %}
+
+{% block body %}
+<div id="bandeau">
+  <h1>Voies récentes selon FANTOIR, non retrouvées dans OSM</h1>
+  <h4>Sélection aléatoire d'une voie par département, parmi les plus récentes d'après FANTOIR, connues du Cadastre, et inconnues dans OSM</h4>
+  <div id="pied_de_page"></div>
+</div>
+<table id="rubriques">
+  <tr><td class="rubrique" id="rub_adresses_non_match" cible="table_fantoir_errone"></td></tr>
+</table>
+</div>
+
+<div id="reponse">
+  <table id="table_fantoir_errone" class="table_liste_"></table>
+  <div id="pied_de_page"></div>
+</div>
+{% endblock %}
+
+{% block js_btm %}
+  {{ super() }}
+  <script src="{{ url_for('static', filename='js/voies_recentes_manquantes.js') }}"></script>
+{% endblock %}
