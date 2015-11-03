@@ -1,5 +1,7 @@
 flask
 flask-script
+flask-sqlalchemy
 flask-restful
+psycopg2
 requests
 beautifulsoup4

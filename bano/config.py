@@ -34,18 +34,8 @@ class DefaultConfig(BaseConfig):
 
     DEBUG = True
 
-    # Flask-Sqlalchemy: http://packages.python.org/Flask-SQLAlchemy/config.html
     SQLALCHEMY_ECHO = True
-    # MYSQL for production.
-    #SQLALCHEMY_DATABASE_URI = 'mysql://username:password@server/db?charset=utf8'
-
-    # Flask-babel: http://pythonhosted.org/Flask-Babel/
-    ACCEPT_LANGUAGES = ['zh']
-    BABEL_DEFAULT_LOCALE = 'en'
-
-    # Flask-cache: http://pythonhosted.org/Flask-Cache/
-    CACHE_TYPE = 'simple'
-    CACHE_DEFAULT_TIMEOUT = 60
+    SQLALCHEMY_DATABASE_URI = 'postgresql://bano:unSuperMot2passe@db:5432/postgres'
 
     # Flask-mail: http://pythonhosted.org/flask-mail/
     # https://bitbucket.org/danjac/flask-mail/issue/3/problem-with-gmails-smtp-server

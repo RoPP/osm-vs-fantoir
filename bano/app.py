@@ -1,12 +1,13 @@
 import os
 
-from flask import Flask, request, render_template
+from flask import Flask, render_template
 
 from .config import DefaultConfig
+from .extensions import db, api
+
 # from .settings import settings
 from .frontend import frontend
-# from .api import api
-
+from .api import api_bp
 
 # For import *
 __all__ = ['create_app']
@@ -14,7 +15,7 @@ __all__ = ['create_app']
 DEFAULT_BLUEPRINTS = (
     frontend,
     # settings,
-    # api,
+    api_bp,
 )
 
 
@@ -27,7 +28,7 @@ def create_app(config=None):
     configure_app(app, config)
     configure_hook(app)
     configure_blueprints(app, blueprints)
-    # configure_extensions(app)
+    configure_extensions(app)
     configure_logging(app)
     configure_template_filters(app)
     configure_error_handlers(app)
@@ -48,9 +49,9 @@ def configure_app(app, config=None):
         app.config.from_object(config)
 
 
-# def configure_extensions(app):
-    # flask-sqlalchemy
-    # db.init_app(app)
+def configure_extensions(app):
+    db.init_app(app)
+    api.init_app(app)
 
     # flask-mail
     # mail.init_app(app)
