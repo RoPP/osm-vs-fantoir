@@ -1,6 +1,7 @@
 import os
 
 from flask import Flask, render_template
+from flask.ext.migrate import Migrate
 
 from .config import DefaultConfig
 from .extensions import db, api
@@ -53,6 +54,7 @@ def configure_extensions(app):
     db.init_app(app)
     api.init_app(app)
 
+    migrate = Migrate(app, db)
     # flask-mail
     # mail.init_app(app)
 

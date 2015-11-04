@@ -1,6 +1,7 @@
 flask
 flask-script
 flask-sqlalchemy
+flask-migrate
 flask-restful
 psycopg2
 requests

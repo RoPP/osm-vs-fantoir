@@ -1,11 +1,12 @@
 from flask.ext.script import Manager
+from flask.ext.migrate import MigrateCommand
 
 from bano import create_app
 from bano.extensions import db
 from bano.api.models import Status
 
 manager = Manager(create_app)
-
+manager.add_command('db', MigrateCommand)
 
 @manager.command
 def initdb():
