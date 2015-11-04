@@ -19,10 +19,10 @@ function start(){
             id_label = 0
             for (i=0;i<data.length;i++){
                 if (c!=i){
-                    menu_labels+='<option value='+data[i].id+'>'+data[i].label+'</option>'
+                    menu_labels+='<option value='+data[i].id_statut+'>'+data[i].label_statut+'</option>'
                 } else {
-                    menu_labels+='<option value='+data[i].id+' selected>'+data[i].label+'</option>'
-                    id_label = data[i].id
+                    menu_labels+='<option value='+data[i].id_statut+' selected>'+data[i].label_statut+'</option>'
+                    id_label = data[i].id_statut
                 }
             }
             menu_labels+='</select>'
