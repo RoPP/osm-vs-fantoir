@@ -25,7 +25,7 @@ def create_app(config=None):
 
     blueprints = DEFAULT_BLUEPRINTS
 
-    app = Flask(__name__)
+    app = Flask(__name__, instance_relative_config=True)
     configure_app(app, config)
     configure_hook(app)
     configure_blueprints(app, blueprints)

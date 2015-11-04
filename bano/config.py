@@ -2,8 +2,7 @@ import os
 
 
 class BaseConfig(object):
-
-    PROJECT = "fbone"
+    PROJECT = "bano"
 
     # Get app root path, also can use flask.root_path.
     # ../../config.py
@@ -21,7 +20,7 @@ class BaseConfig(object):
     if not os.path.exists(LOG_FOLDER):
         os.mkdir(LOG_FOLDER)
 
-    # Fild upload, should override in production.
+    # File upload, should override in production.
     # Limited the maximum allowed payload to 16 megabytes.
     # http://flask.pocoo.org/docs/patterns/fileuploads/#improving-uploads
     MAX_CONTENT_LENGTH = 16 * 1024 * 1024
@@ -31,10 +30,9 @@ class BaseConfig(object):
 
 
 class DefaultConfig(BaseConfig):
-
     DEBUG = True
-
-    SQLALCHEMY_ECHO = True
+    SQLALCHEMY_ECHO = DEBUG
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
     SQLALCHEMY_DATABASE_URI = 'postgresql://bano:unSuperMot2passe@db:5432/postgres'
 
     # Flask-mail: http://pythonhosted.org/flask-mail/
