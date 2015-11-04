@@ -17,7 +17,7 @@ fantoir_status_label = {
 class ApiFantoirStatusLabel(Resource):
     @marshal_with(fantoir_status_label)
     def get(self):
-        query = db.session.query(LabelsStatutsFantoir).order_by(LabelsStatutsFantoir.sort)
+        query = db.session.query(LabelsStatutsFantoir).order_by(LabelsStatutsFantoir.tri)
         return query.all()
 
 api.add_resource(ApiFantoirStatusLabel, '/api/fantoir/status_label')

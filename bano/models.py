@@ -21,5 +21,5 @@ class LabelsStatutsFantoir(db.Model):
     label_statut = Column(db.String(200), nullable=False)
 
     def __init__(self, label, sort):
-        self.label = label
-        self.sort = sort
+        self.label_statut = label
+        self.tri = sort
