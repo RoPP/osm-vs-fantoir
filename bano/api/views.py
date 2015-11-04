@@ -2,7 +2,7 @@ from flask import Blueprint
 from flask.ext.restful import Resource, Api
 from flask.ext.restful import fields, marshal_with
 
-from .models import Status
+from ..models import Status
 from ..extensions import db
 
 api_bp = Blueprint('api', __name__)

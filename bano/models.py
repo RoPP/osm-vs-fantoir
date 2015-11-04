@@ -1,6 +1,6 @@
 from sqlalchemy import Column
 
-from ..extensions import db
+from .extensions import db
 
 
 class Status(db.Model):
