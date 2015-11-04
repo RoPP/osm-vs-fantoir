@@ -4,5 +4,6 @@ flask-sqlalchemy
 flask-migrate
 flask-restful
 psycopg2
+geoalchemy2
 requests
 beautifulsoup4
